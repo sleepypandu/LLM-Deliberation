@@ -20,7 +20,7 @@ def save_conversation(history, agent_name,full_answer, prompt,round_assign=[],in
     
     public_answer, plan  = process_answer(full_answer)
 
-    history['content']["rounds"].append({'agent':agent_name, 'prompt': prompt, 'full_answer': full_answer, 'public_answer': public_answer})
+    history['content']["rounds"].append({'agent':agent_name, 'prompt': prompt, 'full_answer': full_answer.content, 'public_answer': public_answer.content})
 
     if plan:        
         if agent_name in history['content']['plan'].keys():
@@ -91,9 +91,3 @@ def create_outfiles(args,OUTPUT_DIR):
         
 
     return round_assign, round_start, history 
-    
-
-
-
-    
-    
