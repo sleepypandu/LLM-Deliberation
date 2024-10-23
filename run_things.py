@@ -4,7 +4,7 @@ games = ["base", "base_7players", "base_rewritten", "game1", "game2", "game3"]
 params = dict(zip(games, [(6,5)]*6))
 params["base_7players"] = (7,6)
 
-def command(window_size, game, round_num):
+def get_command(window_size, game, round_num):
     exp_name = game + "_test"
     if game not in games:
         return "Sorry, that game is unavailable. Please try again with one of " + ", ".join(games)
@@ -20,10 +20,12 @@ while play_again:
     window_size = input("Window size? ")
     round_num = input("How many rounds should we do? ")
     # Command as a list of strings (recommended)
-    command = ["ls", "-l"]
-
+    command = get_command(window_size, game, round_num)
+    if type(command) is str:
+        continue
     # Run the command and capture output
     result = subprocess.run(command, capture_output=True, text=True)
-
     # Print the output
     print(result.stdout)
+    again = input("Play Again? ")
+    play_again = True if again[0].lower() == "y" else False

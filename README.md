@@ -1,3 +1,9 @@
+## [How,To,Run]
+Run the file run_things.py
+This will prompt you to input the game, window number (how many rounds in history the bots have access to at each point, an integer), and round number (the number of rounds the game runs for, also an integer). The file will print out a history of the bots' thought processes and also export it to the folder <GAME_NAME>_test under the folder corresponding to <GAME_NAME>.
+
+Original READ-ME below:
+-----------------------------------------------------------------------
 ## [Cooperation, Competition, and Maliciousness: LLM-Stakeholders Interactive Negotiation](https://arxiv.org/abs/2309.17234)
 - **Authors: Sahar Abdelnabi, Amr Gomaa, Sarath Sivaprasad, Lea Schönherr, Mario Fritz**
 
